@@ -1,0 +1,80 @@
+<html>
+<!-- AWP_In_Variable Name='"BombaEEA"' -->
+<!-- AWP_In_Variable Name='"BB01_STS"' Enum="OverrideStatus" -->
+<!-- AWP_In_Variable Name='"RST"' Enum="StatusSF" -->
+<!-- AWP_In_Variable Name='"FALHA"' Enum="StatusFALHA" -->
+<!-- AWP_In_Variable Name='"COMANDO_STS"' Enum="ComandoStatus" -->
+<!-- AWP_Enum_Def Name="OverrideStatus" Values='0: "Desligado",1:"Ligado"' -->
+<!-- AWP_Enum_Def Name="ComandoStatus" Values='0: "Desligar",1:"Ligar"' -->
+<!-- AWP_Enum_Def Name="StatusSF" Values='0: "FALTA FASE",1:"OK"' -->
+<!-- AWP_Enum_Def Name="StatusFALHA" Values='0: "OK",1:"FALHA"' -->
+<!-- AWP_In_Variable Name='"nivel_DB"' -->
+
+
+    <head>
+    	<title>Reservatório</title>
+    	<meta http-equiv="refresh" content="30">
+    	<link href="estilo/estilo.css" rel="stylesheet">
+    	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+    </head>
+    
+    <body>
+    	     
+    	
+    		<div id="topo">
+    			
+	    			<h1>	&nbsp; RESERVATÓRIO</h1>
+	    	    <br/>
+	    	    <a href="parametros.html">Par&acirc;metros</a>
+		    	  <br/>
+		    	 
+		    	  <div id="idStatusNiv01">
+		    	  	<strong>NÍVEL RES APOIADO:</strong>:="nivel_DB".display_NIV_01: mca
+		    	  </div>
+    	  	 	
+    	  	
+	    	  	
+		    	 	<div id="idStatusNiv02">
+		    	  	<strong>NÍVEL RES ELEVADO:</strong>:="nivel_DB".display_NIV_02: mca
+		    	  </div>
+		    	  
+		    	  <br/>
+		    	  
+		    		<div id="idStatusSF">
+		    	  	<strong>SUPERVISOR DE FASE:</strong>:="RST":
+		    	  </div>
+		    	  
+		    	  <div id="idStatusFALHA">
+		    	  	<strong>SUPERVISOR DE FALHA:</strong>:="FALHA":
+		    	  </div>
+		    	  
+    		</div>
+    		
+    	  <div id="comandos">	  
+    		    <div id="colunaDaEsquerda">   
+    	      	<div id="idEEA">
+    	        	<h2> Bomba 1</h2>
+    	        	<form>
+    	    	    	<input type="submit" value="Liga" style="font-size:14pt; width: 150px; height: 70px">
+    	    	    	<input type="hidden" name = '"BombaEEA"' value="1">
+    	        	</form>
+    	    
+    	  	    	<form>
+    	  		    	<input type="submit" value="Desliga" style="font-size:14pt; width: 150px; height: 70px">
+    	    	    	<input type="hidden" name = '"BombaEEA"' value="0">
+    	        	</form>
+    	    	
+    	    	<div align="left">
+    	   			<strong>Comando para BB EEA:</strong>:="COMANDO_STS":
+    	   			<br/>
+    	   			<strong>Contagem para partida:</strong>:="IEC_Timer_EEA_DB".ET:
+    	   			<br/>
+    	   			<strong>Status BB 01 EEA:</strong>:="BB01_STS":
+    	   			<br/>
+    	   			<strong>Corrente BB 01 EEA:</strong>:="correntes_DB".display: A
+    	   		</div>
+    	  	  </div>
+    		</div> 
+    	</div>   	 
+  </body>
+</html>
